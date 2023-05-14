@@ -1,0 +1,28 @@
+.input {
+  width: 100%;
+  height: 40px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid $border_gray;
+  border-radius: 0.25rem;
+  outline: none;
+  font-family: $font;
+  font-size: 0.9rem;
+  color: $text_input;
+  &_area {
+      height: 100px;
+      resize: none;
+  }
+  &::placeholder {
+      color: $text_placeholder;
+  }
+  &:focus {
+      border-color: $border_blue;
+      box-shadow: 0 0 0 0.2rem $blue_focus;
+  }
+  &_wrong {
+      border-color: $red;
+      &:focus {
+          border-color: $red;
+      }
+  }
+}

@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="newPost">
+      <input type="text" class="input"
+          placeholder="title here.."
+          [(ngModel)]="title"
+          [ngClass]="{'input_wrong': titleIsWrong}">
+      <textarea
+          class="input input_area"
+          placeholder="text here.."
+          [(ngModel)]="text"
+          [ngClass]="{'input_wrong': textIsWrong}">
+      </textarea>
+      <input type="text" class="input"
+          placeholder="author here.."
+          [(ngModel)]="author"
+          [ngClass]="{'input_wrong': authorIsWrong}">
+      <button class="btn"
+          *ngIf="!editStatus"
+          (click)="addPost()">Add</button>
+      <button class="btn btn_light"
+          *ngIf="editStatus"
+          (click)="updatePost()">Save edit</button>
+  </div>
+  <hr class="hr">
+  <table class="table">
+      <thead>
+          <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Text</th>
+              <th>Author</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let post of adminBlog; index as i">
+              <td>{{ post.id }}</td>
+              <td>{{ post.title }}</td>
+              <td>
+                  {{ post.text | slice:0:15 }}
+                  <span *ngIf="post.text.length > 15">...</span>
+              </td>
+              <td>{{ post.author }}</td>
+              <td>
+                  <button class="btn"
+                      (click)="editPost(post)">
+                      Edit
+                  </button>
+              </td>
+              <td>
+                  <button class="btn"
+                      [disabled]="editStatus"
+                      (click)="deletePost(post)">
+                      Delete
+                  </button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

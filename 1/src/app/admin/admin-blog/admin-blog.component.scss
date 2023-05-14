@@ -1,0 +1,48 @@
+@import '../../shared/styles/base';
+@import '../../shared/styles/variables';
+@import '../../shared/styles/buttons';
+@import '../../shared/styles/inputs';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.newPost {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    .btn {
+        width: 54px;
+        &_light {
+            width: 100px;
+        }
+    }
+}
+
+.hr {
+    border: 1px solid $border_gray;
+}
+
+.table {
+    width: 100%;
+    tr {
+        padding-left: 10px;
+    }
+    th {
+        height: 50px;
+        padding-left: 10px;
+        border-top: 1px solid $border_gray;
+        border-bottom: 1px solid $border_gray;
+        text-align: left;
+    }
+    td {
+        height: 65px;
+        padding-left: 10px;
+        border-top: 1px solid $border_gray;
+        &:first-child {
+            font-weight: bold;
+        }
+    }
+}

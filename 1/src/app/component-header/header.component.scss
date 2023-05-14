@@ -1,0 +1,32 @@
+@import '../../shared/styles/base';
+@import '../../shared/styles/variables';
+
+.header {
+    height: 50px;
+    padding: 0.3rem 0.8rem;
+    background-color: $background_dark;
+}
+
+.nav {
+    height: 100%;
+}
+
+.link {
+    display: inline-block;
+    height: 100%;
+    padding: 0 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    line-height: 2.2rem;
+    color: $text_link;
+    &_active {
+        color: $link_hover;
+    }
+    &:hover {
+        color: $link_hover;
+    }
+    &:focus {
+        outline: 2px solid $light_focus;
+        outline-offset: -2px;
+    }
+}

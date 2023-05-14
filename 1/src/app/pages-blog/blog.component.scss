@@ -1,0 +1,44 @@
+@import '../../shared/styles/base';
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+.blog {
+    width: 1660px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    @include lg-screen {
+        width: 1240px;
+    }
+    @include md-screen {
+        width: 820px;
+    }
+    @include sm-screen {
+        width: 400px;
+    }
+    &__post {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+    &__img {
+        width: 400px;
+        height: 315px;
+    }
+    &__author {
+        color: $blue;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+    &__title {
+        font-size: 1.2rem;
+        a {
+            color: inherit;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
